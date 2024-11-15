@@ -1,0 +1,46 @@
+// STUDENT GRADE CALCULATOR
+package CodeSoft.Task2;
+import java.util.*;
+
+public class StudentGradeCalculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        System.out.print("Enter No. of Subjects :");
+        int NoOfSubjects = sc.nextInt();
+        System.out.println();
+        boolean fail = false;
+        for (int i = 1; i <= NoOfSubjects; i++) {
+            System.out.print("Enter marks for subject" + i + " :");
+            int subMarks = sc.nextInt();
+            if (subMarks < 35) {
+                fail = true;
+            }
+            sum += subMarks;
+        }
+        System.out.println();
+        if (fail) {
+            System.out.println("GRADE CALCULATION :");
+            System.out.println("Fail");
+        } else {
+            System.out.println("GRADE CALCULATION :");
+            System.out.println("Total Marks : " + sum);
+            int Avg = sum / NoOfSubjects;
+            System.out.println("Average Percentage : " + Avg + "%");
+            if (Avg >= 90) {
+                System.out.println("Grade : A+");
+            } else if (Avg >= 80) {
+                System.out.println("Grade : A");
+            } else if (Avg >= 70) {
+                System.out.println("Grade : B+");
+            } else if (Avg >= 60) {
+                System.out.println("Grade : B");
+            } else if (Avg >= 50) {
+                System.out.println("Grade : c");
+            } else {
+                System.out.println("Grade : D");
+            }
+
+        }
+    }
+}
